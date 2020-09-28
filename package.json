@@ -7,8 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
     "element-ui": "^2.4.5",
+    "jsonwebtoken": "^8.5.1",
     "lazyload": "^2.0.0-rc.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",

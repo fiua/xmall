@@ -6,6 +6,8 @@ import login from "@/views/login";
 import goods from "@/views/goods";
 import thanks from "@/views/thanks";
 import goodsDetail from "@/views/goodsDetail";
+import user from "@/views/user";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -38,6 +40,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: login,
+  },
+  {
+    path: "/user",
+    name: "user",
+    component: user,
   },
 ];
 

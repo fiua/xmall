@@ -39,10 +39,14 @@
                         <router-link to="/user/orderList">我的订单</router-link>
                       </li>
                       <li>
-                        <router-link to="/user/information">账号资料</router-link>
+                        <router-link to="/user/information"
+                          >账号资料</router-link
+                        >
                       </li>
                       <li>
-                        <router-link to="/user/addressList">收货地址</router-link>
+                        <router-link to="/user/addressList"
+                          >收货地址</router-link
+                        >
                       </li>
                       <li>
                         <router-link to="/user/support">售后服务</router-link>
@@ -118,7 +122,10 @@
                         </h6>
                       </div>
                     </div>
-                    <div style="height: 313px;text-align: center" class="cart-con">
+                    <div
+                      style="height: 313px; text-align: center"
+                      class="cart-con"
+                    >
                       <p>您的购物车竟然是空的!</p>
                     </div>
                   </div>
@@ -134,10 +141,18 @@
           <div class="nav-sub-wrapper">
             <div class="w">
               <el-breadcrumb separator-class="el-icon-arrow-right">
-                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{path:'/goods'}">全部</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{path:'/goods?cid=1184'}">品牌周边</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{path:'/thanks'}">捐赠名单</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/' }"
+                  >首页</el-breadcrumb-item
+                >
+                <el-breadcrumb-item :to="{ path: '/goods' }"
+                  >全部</el-breadcrumb-item
+                >
+                <el-breadcrumb-item :to="{ path: '/goods?cid=1184' }"
+                  >品牌周边</el-breadcrumb-item
+                >
+                <el-breadcrumb-item :to="{ path: '/thanks' }"
+                  >捐赠名单</el-breadcrumb-item
+                >
               </el-breadcrumb>
             </div>
           </div>
@@ -148,18 +163,23 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      login: false,
+      // login: false,
     };
   },
   computed: {
     ...mapState(["login", "userinfo", "cartlist", "showcart"]),
   },
   methods: {
-    cartshowstate(state) {},
+    ...mapMutations(["SHOWCART"]),
+    cartshowstate(state) {
+      this.SHOWCART({
+        showcart: state,
+      });
+    },
   },
 };
 </script>
